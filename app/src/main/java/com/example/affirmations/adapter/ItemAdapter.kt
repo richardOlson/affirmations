@@ -1,9 +1,11 @@
 package com.example.affirmations.adapter
 
 import android.content.Context
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.affirmations.R
@@ -23,9 +25,12 @@ class ItemAdapter(val context: Context, private  val dataset: List<Affirmation> 
     // Each data item is just an Affirmation object.
     class  ItemViewHolder(private  val view:View): RecyclerView.ViewHolder(view){
 
-        val textView : TextView = view.findViewById(R.id.item_textView)
+        val textView : TextView = view.findViewById(R.id.item_text)
+        val imageView : ImageView = view.findViewById(R.id.item_image)
 
     }
+
+
     /**
      * Create new views (invoked by the layout manager)
     This function will make the viewHolder that is used in the RecyclerView
@@ -50,6 +55,7 @@ class ItemAdapter(val context: Context, private  val dataset: List<Affirmation> 
      * This is the Function that will Bind the ViewHolder to the recyclerView.
      * This will happen when the view is recycled.  This function is called by the
      * LayoutManager to replace the items in the list item view.
+     * Or also to set up the original views.
      * @param holder:  This is the viewHolder that is being passed in.
      * @param position:  This is the position within the dataSet or List of items
      *
@@ -60,7 +66,9 @@ class ItemAdapter(val context: Context, private  val dataset: List<Affirmation> 
         val item = dataset[position]
 
         // setting the data on the viewHolder with the text
+        // and setting the data for the image
         holder.textView.text =  context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
     }
 
 
