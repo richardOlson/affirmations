@@ -63,6 +63,7 @@ class ItemAdapter(val context: Context, private  val dataset: List<Affirmation> 
      * */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // getting the data at the position noted
+        // this is a single affirmation in this case
         val item = dataset[position]
 
         // setting the data on the viewHolder with the text

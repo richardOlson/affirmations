@@ -10,9 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:scrollbars="vertical"
         />
+        <!-- Taking this out and will then set the -->
+        <!--    layoutManager in the Activity Main -->
+        <!-- app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" -->
+
+
 
 
 
