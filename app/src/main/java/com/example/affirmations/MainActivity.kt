@@ -3,6 +3,7 @@ package com.example.affirmations
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.affirmations.adapter.ItemAdapter
 import com.example.affirmations.data.Datasource
 import com.example.affirmations.databinding.ActivityMainBinding
@@ -24,8 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+
         // will be setting the layout manager here for the recyclerView
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
+       // binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.VERTICAL,false)
 
         setContentView(binding.root)
 
